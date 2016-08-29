@@ -1,3 +1,4 @@
+```javascript
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -496,3 +497,5 @@ function begin(){
 	b.beginAnimate();	
 }
 </script>
+```
+
