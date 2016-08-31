@@ -1,0 +1,113 @@
+```html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ 
+    <style>
+        /*抽奖活动-开始*/
+        .act-div-1 {
+            width: 100%;
+            height: 740px;
+            background: url(/image/pic/bg/activity/act-bg-1.jpg) no-repeat center top;
+        }
+
+        .act-div-2 {
+            width: 100%;
+            height: 170px;
+            background: url(/image/pic/bg/activity/act-bg-2.jpg) no-repeat center top;
+        }
+
+        .act-div-2 .main {
+            width: 1028px;
+            height:712px;
+        }
+
+        .main {
+            position: relative;
+        }
+
+        canvas{
+            position:absolute;
+            background-color:transparent;
+        }
+
+        #canvas_bg {
+            z-index: 8;
+        }
+
+        #canvas_0 {
+            z-index: 10;
+        }
+
+        #canvas_1 {
+            z-index: 11;
+        }
+
+        #canvas_2 {
+            z-index: 12;
+        }
+
+        #canvas_3 {
+            z-index: 13;
+        }
+
+        #canvas_4 {
+            z-index: 14;
+        }
+
+        #canvas_r {
+            z-index: 15;
+        }
+
+        #canvas_l {
+            z-index: 16;
+        }
+
+        .beginGame {
+            position: absolute;
+            top: 380px;
+            left: 350px;
+            z-index: 100;
+            cursor:pointer;
+        }
+    </style>
+
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="lottery.js" type="text/javascript"></script>
+
+</head>
+
+div class="main">
+        <!--抽奖模块-开始-->
+        <canvas id="canvas_l" width="1028" height="712"></canvas>
+        <canvas id="canvas_bg" width="1028" height="712"></canvas>
+        <canvas id="canvas_0" width="1028" height="712"></canvas>
+        <canvas id="canvas_1" width="1028" height="712"></canvas>
+        <canvas id="canvas_2" width="1028" height="712"></canvas>
+        <canvas id="canvas_3" width="1028" height="712"></canvas>
+        <canvas id="canvas_4" width="1028" height="712"></canvas>
+        <canvas id="canvas_r" width="1028" height="712"></canvas>
+        <!--抽奖模块-结束-->
+        <div id="btnBegin" class="beginGame">
+            <img src="/Lottery/image/act-anniu.png" />
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $(function () {
+        // 判断是否登录，没有登录弹出登录框强行登录
+        var l = bx();
+        l.init({});
+
+        $("#btnBegin").click(function () {
+            l.beginAnimate();
+        });
+
+    });
+
+
+</script>
+
+
+```
