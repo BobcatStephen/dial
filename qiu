@@ -1,0 +1,43 @@
+var ctx = document.getElementById("canvas").getContext("2d");
+	var data = [];
+
+	
+
+	function beginGame() {
+		
+		for (var i = 0; i < 30; i++) {
+			var q = {
+				x:100 + i * 20,
+				y:500 + i * 5,
+				g:1.5+Math.random(),
+				vx:Math.pow(-1,Math.ceil(Math.random()*1000))*4,
+				vy:-30
+			}
+			data.push(q);
+		}
+		draw();
+
+	}
+
+	function draw() {
+		window.requestAnimationFrame(draw);
+		
+		ctx.clearRect(0,0,800,800);
+		
+		for (var i = 0; i < data.length; i++) {
+			data[i].x += data[i].vx;
+			data[i].y += data[i].vy;
+			data[i].vy += data[i].g;
+
+			if (data[i].y >= 800){
+				data[i].y = 800;
+				data[i].vy = - data[i].vy * 0.75;
+			}
+
+			ctx.fillStyle = "red";
+			ctx.fillRect(data[i].x,data[i].y,10,10);
+
+		}
+			
+
+	}
